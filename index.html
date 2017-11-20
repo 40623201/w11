@@ -1,0 +1,288 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+<title>
+2017 Spring 機械設計工程系網際內容管理
+</title>
+    <meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+    <meta name="author" content="Hakim El Hattab">
+    
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    
+    <link rel="stylesheet" href="data/reveal/reveal.css">
+    <link rel="stylesheet" href="data/reveal/black.css" id="theme">
+    
+    <!-- Theme used for syntax highlighting of code -->
+    <link rel="stylesheet" href="data/reveal/zenburn.css">
+
+    <!-- Printing and PDF exports -->
+    <script>
+        var link = document.createElement( 'link' );
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = window.location.search.match( /print-pdf/gi ) ? 'data/reveal/pdf.css' : 'data/reveal/paper.css';
+        document.getElementsByTagName( 'head' )[0].appendChild( link );
+    </script>
+
+    <!--[if lt IE 9]>
+    <script src="data/reveal/html5shiv.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+<div class="reveal">
+<!-- Any section element inside of this container is displayed as a slide -->
+<div class="slides">
+<section data-markdown>
+    <script type="text/template">
+## 2017Fall CADP 與 CP
+
+## 國立虎尾科技大學
+## 機械設計工程系
+
+<small>
+Created by [40623201 王君庭](http://kmolab.github.io/blog/)
+</small>
+
+[CADP 與 CP 課程網誌](blog/index.html)
+
+
+    </script>
+</section>
+
+
+						
+<section>
+    <section data-markdown>
+        <script type="text/template">
+    # W1
+
+    * 上課需帶物品:隨身碟、耳機、筆記本
+
+    * 機械:由固體、液體、軟體組成
+
+    * 設計:由六種表達組合而成(口語、文字、圖表2D、3D、量化、實體)
+
+    * 創造力:自學力(好好學)、執行力(好好做)、想像力(達不到的運用想像力)
+
+    * 程式:程-流程,式-一定的格式
+        </script>
+    </section>
+
+
+    						
+</section>
+
+
+						
+<section>
+    <section data-markdown>
+        <script type="text/template">
+    # W2 
+    ## fossil之基本指令:
+    * fossil clone 克隆
+    * fossil add 新增
+    * fossil commit 提交
+    * fossil status 狀態
+    * fossil push 推送
+    * fossil open 開啟
+    * fossil remote-url off 網址關閉
+    * fossil ui - user interface 使用者介面
+
+        </script>
+    </section>
+
+
+    						
+</section>
+
+
+						
+<section>
+    <section data-markdown>
+        <script type="text/template">
+    #W3
+    ## Part 1 如何新增網誌:
+
+    * 先fossil clone 4062後fossil open
+    * 再複製上周clone的4052(_pycache_跟_FOSSIL_不能複製到不然版次會亂掉)
+
+    * 再fossil add .新增在版次系統後fossil commit -m " "(提交要綁定訊息," "內所打的東西會在Timeline上看到)
+    * 之後再輸入密碼就能將東西推上遠端
+
+
+        </script>
+    </section>
+
+
+    						
+    <section data-markdown>
+        <script type="text/template">
+    # W3
+    ## Part 2 如何更改近端及遠端:
+
+    * 先開啟yen.leo接著再@button pelican-blog按下pelican-blog(近端按鈕)>Goto Script
+
+    * 近端完成後接著在遠端的@edit publishconf.py更改網址(需更改主機及學號)後
+
+    * File>Save(儲存)後再按github-biog(遠端按鈕)>Goto Script
+
+    * 再推送上去(重複上面新增版次級提交的動作)
+        </script>
+    </section>
+
+
+    						
+</section>
+
+
+						
+<section>
+    <section data-markdown>
+        <script type="text/template">
+    #W4
+    ## Part 1 如何更改Auhor:
+
+    * 重複上週clone 4062的動作後fossil open ./../../
+     
+    * 開啟launchLeo.py再開啟4062>users>yen.leo將Auhor:yen更改為Auhor:40623201
+
+    * 之後推近端及遠端之動作再fossil add .
+
+    * fossil status時,會發現更改的yen會被MISSING
+
+    * 再fossil delete 被MISSING的,再fossil commit -m " "提交上去後就能推遠端了
+
+
+        </script>
+    </section>
+
+
+    						
+    <section data-markdown>
+        <script type="text/template">
+    #W4
+    ## Part 2 如何將版本同步:
+
+    * 先mkdir fossil-settings 新建一個 fossil-settings
+    * 不能直接在資料夾新增,因為不是一般的資料夾格式,就必須用程式mkdir的方式去建立
+
+    * 再將ignore-glob的檔案 複製 /.git/,/pycache/,/.pyc
+
+    * 接著fossil delete pycache/* 刪除掉__pycache__的資料夾
+
+    * 再fossil add .>fossil commit -m " "提交上去就能版本同步了
+        </script>
+    </section>
+
+
+    						
+</section>
+
+
+						
+<section>
+    <section data-markdown>
+        <script type="text/template">
+    #W6
+    ## 如何創建calculator的介面:
+
+    * 先mkdir github後
+
+    * 再git clone https://github.com/kmolab/rpcal.git
+
+    * clone完後開啟eric6>Project>Open>clone的github資料夾>pyqt5_calculator>calculator.e4p
+
+    * 開啟後在Start>Run project...執行>按OK執行
+
+    * 再開eric6>Project>New>填寫Project Name>Project Directory選擇存放位置>OK
+
+
+        </script>
+    </section>
+
+
+    						
+</section>
+
+
+						
+<section>
+    <section data-markdown>
+        <script type="text/template">
+    #W7-W9
+    ##考試週
+    * 考如何新增往至及上傳影片
+
+    * 練習 for 迴圈用法與 Python 的縮排規定
+
+    * Eric6創建calculator的介面
+
+    * 統整所學之內容並錄製有聲音之影片
+
+    * 準備兩分鐘心得上台報告
+
+
+        </script>
+    </section>
+
+
+    						
+</section>
+
+
+						
+<section>
+    <section data-markdown>
+        <script type="text/template">
+    #W1-W9
+    ##學習心得
+
+    剛開始學fossil時,只聽到老師一直fossil clone跟fossil .....的完全不懂是什麼意思, 但經過老師錄製的教學影片及同學們的幫助,終於弄懂每個動作後面所指的涵義,只要將教學影片多看幾次就能了解老師所教的東西了 ,也學到了很有趣的迴圈用法,並將她用函式減少更改變數的次數,也學到一些calculator介面創建及排版,這幾堂課學習到了很多
+
+
+
+        </script>
+    </section>
+
+
+    						
+</section>
+
+
+						
+</div>
+
+</div>
+
+<script src="data/reveal/head.min.js"></script>
+<script src="data/reveal/reveal.js"></script>
+<script>
+        // More info https://github.com/hakimel/reveal.js#configuration
+        Reveal.initialize({
+            controls: true,
+            progress: true,
+            history: true,
+            center: true,
+
+            transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+            // More info https://github.com/hakimel/reveal.js#dependencies
+            dependencies: [
+                { src: 'data/reveal/classList.js', condition: function() { return !document.body.classList; } },
+                { src: 'data/reveal/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                { src: 'data/reveal/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                { src: 'data/reveal/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+                { src: 'data/reveal/zoom.js', async: true },
+                { src: 'data/reveal/notes.js', async: true },
+                { src: 'data/reveal/math.js', async: true }
+            ]
+        });
+</script>
+</body>
+</html>
+
